@@ -1,0 +1,19 @@
+{
+  "name": "request-cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delashum/request-cache.git"
+  },
+  "author": "delashum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delashum/request-cache/issues"
+  },
+  "homepage": "https://github.com/delashum/request-cache#readme"
+}

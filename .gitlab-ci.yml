@@ -1,0 +1,33 @@
+image: "node:11-alpine"
+
+stages:
+  - build
+  - test
+  - publish
+
+build:
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - dist/
+  script:
+    - npm install
+    - npm run build
+
+test:
+  stage: test
+  script:
+    - npm install --only=dev
+    - npm test
+  allow_failure: false
+
+publish:
+  stage: publish
+  script:
+    - npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+    - npm publish
+  only:
+    - master
