@@ -58,29 +58,6 @@ export const Posts = () => {
 }
 ```
 
-## why should I use this?
-
-Complexity is opt-in. The API starts very simple, but can be combined in any way to handle very complicated validation.
-
-```typescript
-import {object, string, number, array} from 'vnv'
-
-const users = [
-  {name: 'John Doe', age: 34, children: ['Ben', 'Lisa']},
-  {name: 'Jane Doe', age: 50, children: [true]}
-]
-
-const isUserList = array(
-  object({
-    name: string({min: 5, max: 50}),
-    age: number({integer: true}),
-    children: array(string())
-  })
-)
-
-isUserList(users) // ValidationError: [1].children.[0] must be a string
-```
-
 
 ## DOCS
 
